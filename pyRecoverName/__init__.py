@@ -54,6 +54,8 @@ def main():
                     raise e
             old_path = os.path.join(current_path, file)
             target_path = os.path.join(new_path, new_file)
+            target_dir = os.path.dirname(target_path)
+            os.makedirs(target_dir, exist_ok=True)
             copyfile(old_path, target_path)
 
 
